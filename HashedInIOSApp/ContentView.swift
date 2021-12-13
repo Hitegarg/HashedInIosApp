@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  HashedInIOSApp
-//
-//  Created by hitegarg on 13/12/21.
-//
-
 import SwiftUI
 
 struct ContentView: View {
