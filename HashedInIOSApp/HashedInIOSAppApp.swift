@@ -4,7 +4,7 @@ import SwiftUI
 struct HashedInIOSAppApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            CourseView()
         }
     }
 }

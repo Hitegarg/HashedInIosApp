@@ -16,6 +16,12 @@
 		5CAC0552276737020030DA47 /* HashedInIOSAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC0551276737020030DA47 /* HashedInIOSAppUITestsLaunchTests.swift */; };
 		5CECCE212767A2D600AC781D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE202767A2D600AC781D /* LoginView.swift */; };
 		5CECCE262767A5B000AC781D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE252767A5B000AC781D /* UserModel.swift */; };
+		5CECCE2A2767B21200AC781D /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE292767B21200AC781D /* CourseModel.swift */; };
+		5CECCE2D2767B71D00AC781D /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE2C2767B71D00AC781D /* WebService.swift */; };
+		5CECCE302767B75F00AC781D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE2F2767B75F00AC781D /* Constants.swift */; };
+		5CECCE332767B9BB00AC781D /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE322767B9BB00AC781D /* CourseViewModel.swift */; };
+		5CECCE362767BB8F00AC781D /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE352767BB8F00AC781D /* CourseView.swift */; };
+		5CECCE382767C2DC00AC781D /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CECCE372767C2DC00AC781D /* Property List.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,12 @@
 		5CAC0551276737020030DA47 /* HashedInIOSAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashedInIOSAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5CECCE202767A2D600AC781D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5CECCE252767A5B000AC781D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5CECCE292767B21200AC781D /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
+		5CECCE2C2767B71D00AC781D /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		5CECCE2F2767B75F00AC781D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5CECCE322767B9BB00AC781D /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		5CECCE352767BB8F00AC781D /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		5CECCE372767C2DC00AC781D /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +110,15 @@
 		5CAC0533276737010030DA47 /* HashedInIOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				5CECCE2E2767B74D00AC781D /* Utils */,
+				5CECCE272767B1D800AC781D /* Course */,
 				5CECCE222767A58300AC781D /* Profile */,
 				5CECCE1E2767A28B00AC781D /* Login */,
 				5CAC0534276737010030DA47 /* HashedInIOSAppApp.swift */,
 				5CAC0536276737010030DA47 /* ContentView.swift */,
 				5CAC0538276737020030DA47 /* Assets.xcassets */,
 				5CAC053A276737020030DA47 /* Preview Content */,
+				5CECCE372767C2DC00AC781D /* Property List.plist */,
 			);
 			path = HashedInIOSApp;
 			sourceTree = "<group>";
@@ -163,6 +178,57 @@
 				5CECCE252767A5B000AC781D /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5CECCE272767B1D800AC781D /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				5CECCE342767BB7800AC781D /* View */,
+				5CECCE312767B9A600AC781D /* ViewModel */,
+				5CECCE2B2767B70400AC781D /* Service */,
+				5CECCE282767B1E600AC781D /* Model */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		5CECCE282767B1E600AC781D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CECCE292767B21200AC781D /* CourseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5CECCE2B2767B70400AC781D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5CECCE2C2767B71D00AC781D /* WebService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5CECCE2E2767B74D00AC781D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5CECCE2F2767B75F00AC781D /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5CECCE312767B9A600AC781D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5CECCE322767B9BB00AC781D /* CourseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5CECCE342767BB7800AC781D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CECCE352767BB8F00AC781D /* CourseView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CECCE382767C2DC00AC781D /* Property List.plist in Resources */,
 				5CAC053C276737020030DA47 /* Preview Assets.xcassets in Resources */,
 				5CAC0539276737020030DA47 /* Assets.xcassets in Resources */,
 			);
@@ -295,8 +362,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CECCE2D2767B71D00AC781D /* WebService.swift in Sources */,
 				5CECCE212767A2D600AC781D /* LoginView.swift in Sources */,
+				5CECCE362767BB8F00AC781D /* CourseView.swift in Sources */,
+				5CECCE2A2767B21200AC781D /* CourseModel.swift in Sources */,
 				5CAC0537276737010030DA47 /* ContentView.swift in Sources */,
+				5CECCE302767B75F00AC781D /* Constants.swift in Sources */,
+				5CECCE332767B9BB00AC781D /* CourseViewModel.swift in Sources */,
 				5CECCE262767A5B000AC781D /* UserModel.swift in Sources */,
 				5CAC0535276737010030DA47 /* HashedInIOSAppApp.swift in Sources */,
 			);
