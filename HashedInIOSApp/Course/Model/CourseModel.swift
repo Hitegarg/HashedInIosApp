@@ -13,8 +13,6 @@ struct CourseModel: Codable, Identifiable{
     var title:String
     var description:String
     var imageName: String
-    
-    
-    
+
 }
 

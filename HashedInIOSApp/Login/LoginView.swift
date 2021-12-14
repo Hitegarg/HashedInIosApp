@@ -27,7 +27,7 @@ struct LoginView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: CourseView().navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
                 
                     Text("Login")
                         .padding(.horizontal, 40)

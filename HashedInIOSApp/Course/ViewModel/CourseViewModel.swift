@@ -16,6 +16,6 @@ class CourseViewModel: ObservableObject {
             .sink(receiveCompletion: { _ in } , receiveValue: {
                 data in
                 self.courseList = data
-            })
+        })
     }
 }
