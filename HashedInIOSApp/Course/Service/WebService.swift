@@ -12,6 +12,7 @@ class WebService {
             .receive(on: RunLoop.main)
             .map(\.data)
             .decode(type: [CourseModel].self, decoder: JSONDecoder())
+            .share()
             .eraseToAnyPublisher()
     }
     

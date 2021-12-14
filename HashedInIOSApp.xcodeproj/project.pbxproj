@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5C95695827689DB900B63D85 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C95695727689DB900B63D85 /* CourseDetailView.swift */; };
 		5C95695A27689EF700B63D85 /* CourseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C95695927689EF700B63D85 /* CourseCardView.swift */; };
+		5C95695E2768B00000B63D85 /* HeaderBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C95695D2768B00000B63D85 /* HeaderBarModel.swift */; };
+		5C9569612768B06300B63D85 /* HeaderBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9569602768B06300B63D85 /* HeaderBarViewModel.swift */; };
+		5C9569642768B12500B63D85 /* HeaderBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9569632768B12500B63D85 /* HeaderBarView.swift */; };
+		5C9569672768B4C200B63D85 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9569662768B4C200B63D85 /* CartView.swift */; };
+		5C9569692768C1FF00B63D85 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9569682768C1FF00B63D85 /* CartViewModel.swift */; };
 		5CAC0535276737010030DA47 /* HashedInIOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC0534276737010030DA47 /* HashedInIOSAppApp.swift */; };
 		5CAC0537276737010030DA47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC0536276737010030DA47 /* ContentView.swift */; };
 		5CAC0539276737020030DA47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CAC0538276737020030DA47 /* Assets.xcassets */; };
@@ -46,6 +51,11 @@
 /* Begin PBXFileReference section */
 		5C95695727689DB900B63D85 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
 		5C95695927689EF700B63D85 /* CourseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCardView.swift; sourceTree = "<group>"; };
+		5C95695D2768B00000B63D85 /* HeaderBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBarModel.swift; sourceTree = "<group>"; };
+		5C9569602768B06300B63D85 /* HeaderBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBarViewModel.swift; sourceTree = "<group>"; };
+		5C9569632768B12500B63D85 /* HeaderBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBarView.swift; sourceTree = "<group>"; };
+		5C9569662768B4C200B63D85 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		5C9569682768C1FF00B63D85 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		5CAC0531276737010030DA47 /* HashedInIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashedInIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAC0534276737010030DA47 /* HashedInIOSAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashedInIOSAppApp.swift; sourceTree = "<group>"; };
 		5CAC0536276737010030DA47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +101,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C95695B2768AFB200B63D85 /* HeaderBar */ = {
+			isa = PBXGroup;
+			children = (
+				5C9569622768B10500B63D85 /* View */,
+				5C95695F2768B03B00B63D85 /* ViewModel */,
+				5C95695C2768AFDE00B63D85 /* Model */,
+			);
+			path = HeaderBar;
+			sourceTree = "<group>";
+		};
+		5C95695C2768AFDE00B63D85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C95695D2768B00000B63D85 /* HeaderBarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C95695F2768B03B00B63D85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C9569602768B06300B63D85 /* HeaderBarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C9569622768B10500B63D85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C9569632768B12500B63D85 /* HeaderBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C95696A2768C3BC00B63D85 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				5C95696C2768C3E400B63D85 /* ViewModel */,
+				5C95696B2768C3DA00B63D85 /* View */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		5C95696B2768C3DA00B63D85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C9569662768B4C200B63D85 /* CartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C95696C2768C3E400B63D85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C9569682768C1FF00B63D85 /* CartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5CAC0528276737010030DA47 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +183,8 @@
 		5CAC0533276737010030DA47 /* HashedInIOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				5C95696A2768C3BC00B63D85 /* Cart */,
+				5C95695B2768AFB200B63D85 /* HeaderBar */,
 				5CECCE2E2767B74D00AC781D /* Utils */,
 				5CECCE272767B1D800AC781D /* Course */,
 				5CECCE222767A58300AC781D /* Profile */,
@@ -368,16 +439,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9569672768B4C200B63D85 /* CartView.swift in Sources */,
 				5C95695827689DB900B63D85 /* CourseDetailView.swift in Sources */,
 				5CECCE2D2767B71D00AC781D /* WebService.swift in Sources */,
 				5CECCE212767A2D600AC781D /* LoginView.swift in Sources */,
 				5CECCE362767BB8F00AC781D /* CourseView.swift in Sources */,
+				5C9569692768C1FF00B63D85 /* CartViewModel.swift in Sources */,
 				5CECCE2A2767B21200AC781D /* CourseModel.swift in Sources */,
 				5CAC0537276737010030DA47 /* ContentView.swift in Sources */,
 				5CECCE302767B75F00AC781D /* Constants.swift in Sources */,
+				5C9569642768B12500B63D85 /* HeaderBarView.swift in Sources */,
 				5CECCE332767B9BB00AC781D /* CourseViewModel.swift in Sources */,
+				5C9569612768B06300B63D85 /* HeaderBarViewModel.swift in Sources */,
 				5CECCE262767A5B000AC781D /* UserModel.swift in Sources */,
 				5CAC0535276737010030DA47 /* HashedInIOSAppApp.swift in Sources */,
+				5C95695E2768B00000B63D85 /* HeaderBarModel.swift in Sources */,
 				5C95695A27689EF700B63D85 /* CourseCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,8 +2,8 @@ import SwiftUI
 
 struct CourseDetailView: View {
     
+    @ObservedObject private var cartListVM = CartViewModel()
     var course:CourseModel
-    @Binding var cart:[CourseModel]
     
     var body: some View {
         ScrollView {
@@ -33,17 +33,17 @@ struct CourseDetailView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        if self.cart.contains(where: { (item) -> Bool in
+                        if self.cartListVM.cartList.contains(where: { (item) -> Bool in
                             item.id == self.course.id
                         }) {
-                            self.cart.removeAll { (item) -> Bool in
+                            self.cartListVM.cartList.removeAll { (item) -> Bool in
                                 item.id == self.course.id
                             }
                         } else {
-                            self.cart.append(self.course)
+                            self.cartListVM.cartList.append(self.course)
                         }
                     }) {
-                        if self.cart.contains(where: { (item) -> Bool in
+                        if self.cartListVM.cartList.contains(where: { (item) -> Bool in
                             item.id == self.course.id
                         }) {
                             HStack(alignment: .center, spacing: 20) {
@@ -78,11 +78,7 @@ struct CourseDetailView: View {
 struct CourseDetailView_Previews: PreviewProvider {
     @State static var course :CourseModel = CourseModel(title: "SwiftUI", description: "jvnjdrv jdfnjv",imageName: "swiftUI")
     
-    @State static var cart:[CourseModel] = [CourseModel(title: "SwiftUI", description: "fghfgffhf",imageName: "swiftUI")]
-    
-   
-    
     static var previews: some View {
-        CourseDetailView(course: course, cart: $cart)
+        CourseDetailView(course: course)
     }
 }
