@@ -2,6 +2,9 @@ import SwiftUI
 
 struct CourseDetailView: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: Cart.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Cart.id, ascending: true)]) var cartList: FetchedResults<Cart>
+    
     @ObservedObject private var cartListVM = CartViewModel()
     var course:CourseModel
     
@@ -33,17 +36,28 @@ struct CourseDetailView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        if self.cartListVM.cartList.contains(where: { (item) -> Bool in
-                            item.id == self.course.id
-                        }) {
-                            self.cartListVM.cartList.removeAll { (item) -> Bool in
-                                item.id == self.course.id
+                        if self.cartList.contains(where: { (item) in
+                            if item.id == self.course.id {
+                                self.managedObjectContext.delete(item)
                             }
+                            return item.id == self.course.id
+                        }) {
+                            print("\(self.course.id) deleted")
                         } else {
-                            self.cartListVM.cartList.append(self.course)
+                            let cart = Cart(context: self.managedObjectContext)
+                            cart.id = self.course.id
+                            cart.image = self.course.imageName
+                            cart.desc = self.course.description
+                            cart.title = self.course.title
                         }
+                            do {
+                                try self.managedObjectContext.save()
+                                print("\(course.id) Cart Saved")
+                            } catch {
+                                print(error)
+                            }
                     }) {
-                        if self.cartListVM.cartList.contains(where: { (item) -> Bool in
+                        if self.cartList.contains(where: { (item) -> Bool in
                             item.id == self.course.id
                         }) {
                             HStack(alignment: .center, spacing: 20) {

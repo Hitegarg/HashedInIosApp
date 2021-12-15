@@ -1,16 +1,9 @@
-//
-//  File.swift
-//  HashedInIOSApp
-//
-//  Created by hitegarg on 14/12/21.
-//
-
 import Foundation
 class CartViewModel: ObservableObject {
     
     @Published var cartList = [CourseModel]()
-    
-    func addCartList(course: CourseModel){
-        cartList.append(course)
+
+    func courseConvert(id: UUID, title: String, image: String, desc: String) -> CourseModel{
+        return CourseModel(id: id, title: title, description: desc, imageName: image)
     }
 }

@@ -2,17 +2,22 @@ import SwiftUI
 
 struct CartView: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(entity: Cart.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Cart.id, ascending: true)]) var cartList: FetchedResults<Cart>
+    
     @ObservedObject private var cartListVM = CartViewModel()
-
+    
     @State private var isEditing:Bool = false
     
+
     var body: some View {
-            VStack{
+        VStack(alignment: .center, spacing: 0) {
             ZStack {
                 Text("Your Cart")
                         .font(Font.system(size: 30, weight: .bold, design: .rounded))
                         .font(.title).padding(.all,30)
-                Text("\(self.cartListVM.cartList.count) Item\(self.cartListVM.cartList.count == 1 ? "" : "s")")
+                Text("\(self.cartList.count) Item\(self.cartList.count == 1 ? "" : "s")")
                     .font(Font.system(size: 13, weight: .semibold, design: .rounded))
                     .foregroundColor(Color.gray)
                     .padding(.top, 50)
@@ -38,52 +43,37 @@ struct CartView: View {
             .padding(.bottom, 10)
             
             ScrollView(.vertical, showsIndicators: true) {
-        
-                ForEach(self.cartListVM.cartList, id: \.id) { item in
-                    HStack {
-                        CourseCardView(item: item)
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 8)
+                    ForEach(self.cartList, id: \.self) { item in
                         
-                        if self.isEditing {
-                            Button(action: {
-                                self.cartListVM.cartList.removeAll { (prod) -> Bool in
-                                    prod.id == item.id
-                                }
-                            }) {
-                                Image(systemName: "trash.fill")
-                                .padding(.trailing, 20)
-                            }.foregroundColor(Color.red)
+                        HStack {
+                            CourseCardView(item: self.cartListVM.courseConvert(id: item.id ?? UUID(), title: item.title ?? "", image: item.image ?? "", desc: item.desc ?? ""))
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 8)
+                            
+                            if self.isEditing {
+                                
+                                Button(action: {
+                                    self.managedObjectContext.delete(item)
+                                    do {
+                                        try self.managedObjectContext.save()
+                                        print("\(item.id) deleted")
+                                    } catch {
+                                            print(error)
+                                    }
+                                }) {
+                                    Image(systemName: "trash.fill")
+                                    .padding(.trailing, 20)
+                                }.foregroundColor(Color.red)
+                            }
                         }
                     }
-                }
-
-                HStack(alignment: .center, spacing: 12) {
-
-                    
-                    // Total cost and saved amount
-                    VStack(alignment: .leading, spacing: 0) {
-//                        Text("Total:")
-//                            .foregroundColor(Color.gray)
-//                            .font(Font.system(size: 14, weight: .semibold, design: .default))
-//                        Text("Rs.\(String(format: "%.2f", cartTotal))")
-//                            .font(Font.system(size: 20, weight: .heavy, design: .rounded))
-//                        Text("You have saved Rs.\(String(format: "%.2f", cartSaved))")
-//                            .font(Font.system(size: 15, design: .rounded))
-//                            .fontWeight(.regular)
-//                            .foregroundColor(Color.red)
-                    }
-                    Spacer()
-                }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 8)
                 
                 // Checkout Button
                 GeometryReader { geometry in
                     Button(action: {
                         
                     }) {
-                        if self.cartListVM.cartList.count == 0 {
+                        if self.cartList.count == 0 {
                             HStack(alignment: .center, spacing: 12) {
                                 Text("Cart Empty")
                                 Image(systemName: "xmark")
@@ -104,12 +94,11 @@ struct CartView: View {
                             .background(Color(hue: 0.359, saturation: 1.0, brightness: 0.677))
                             .cornerRadius(20)
                         }
-                        
                     }
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 .padding([.top, .leading], 30.0)
-                .padding(.bottom, 100) // Add Space at bottom of Scroll View
+                .padding(.bottom, 100) 
             }
         }
     }

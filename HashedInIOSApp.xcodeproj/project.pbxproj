@@ -21,6 +21,8 @@
 		5CAC0546276737020030DA47 /* HashedInIOSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC0545276737020030DA47 /* HashedInIOSAppTests.swift */; };
 		5CAC0550276737020030DA47 /* HashedInIOSAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC054F276737020030DA47 /* HashedInIOSAppUITests.swift */; };
 		5CAC0552276737020030DA47 /* HashedInIOSAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC0551276737020030DA47 /* HashedInIOSAppUITestsLaunchTests.swift */; };
+		5CDCE0AF2769F3860027DAA8 /* HashedInIOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCE0AD2769F3860027DAA8 /* HashedInIOSApp.xcdatamodeld */; };
+		5CDCE0B12769F45C0027DAA8 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCE0B02769F45C0027DAA8 /* Persistance.swift */; };
 		5CECCE212767A2D600AC781D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE202767A2D600AC781D /* LoginView.swift */; };
 		5CECCE262767A5B000AC781D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE252767A5B000AC781D /* UserModel.swift */; };
 		5CECCE2A2767B21200AC781D /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECCE292767B21200AC781D /* CourseModel.swift */; };
@@ -66,6 +68,8 @@
 		5CAC054B276737020030DA47 /* HashedInIOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HashedInIOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAC054F276737020030DA47 /* HashedInIOSAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashedInIOSAppUITests.swift; sourceTree = "<group>"; };
 		5CAC0551276737020030DA47 /* HashedInIOSAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashedInIOSAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5CDCE0AE2769F3860027DAA8 /* HashedInIOSApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HashedInIOSApp.xcdatamodel; sourceTree = "<group>"; };
+		5CDCE0B02769F45C0027DAA8 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		5CECCE202767A2D600AC781D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5CECCE252767A5B000AC781D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5CECCE292767B21200AC781D /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
@@ -192,8 +196,10 @@
 				5CAC0534276737010030DA47 /* HashedInIOSAppApp.swift */,
 				5CAC0536276737010030DA47 /* ContentView.swift */,
 				5CAC0538276737020030DA47 /* Assets.xcassets */,
+				5CDCE0B02769F45C0027DAA8 /* Persistance.swift */,
 				5CAC053A276737020030DA47 /* Preview Content */,
 				5CECCE372767C2DC00AC781D /* Property List.plist */,
+				5CDCE0AD2769F3860027DAA8 /* HashedInIOSApp.xcdatamodeld */,
 			);
 			path = HashedInIOSApp;
 			sourceTree = "<group>";
@@ -444,10 +450,12 @@
 				5CECCE2D2767B71D00AC781D /* WebService.swift in Sources */,
 				5CECCE212767A2D600AC781D /* LoginView.swift in Sources */,
 				5CECCE362767BB8F00AC781D /* CourseView.swift in Sources */,
+				5CDCE0B12769F45C0027DAA8 /* Persistance.swift in Sources */,
 				5C9569692768C1FF00B63D85 /* CartViewModel.swift in Sources */,
 				5CECCE2A2767B21200AC781D /* CourseModel.swift in Sources */,
 				5CAC0537276737010030DA47 /* ContentView.swift in Sources */,
 				5CECCE302767B75F00AC781D /* Constants.swift in Sources */,
+				5CDCE0AF2769F3860027DAA8 /* HashedInIOSApp.xcdatamodeld in Sources */,
 				5C9569642768B12500B63D85 /* HeaderBarView.swift in Sources */,
 				5CECCE332767B9BB00AC781D /* CourseViewModel.swift in Sources */,
 				5C9569612768B06300B63D85 /* HeaderBarViewModel.swift in Sources */,
@@ -795,6 +803,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5CDCE0AD2769F3860027DAA8 /* HashedInIOSApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5CDCE0AE2769F3860027DAA8 /* HashedInIOSApp.xcdatamodel */,
+			);
+			currentVersion = 5CDCE0AE2769F3860027DAA8 /* HashedInIOSApp.xcdatamodel */;
+			path = HashedInIOSApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5CAC0529276737010030DA47 /* Project object */;
 }
