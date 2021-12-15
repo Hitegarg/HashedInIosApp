@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserModel {
+struct ProfileModel {
     
     var id = UUID()
     var username:String

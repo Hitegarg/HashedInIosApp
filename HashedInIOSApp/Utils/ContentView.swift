@@ -15,7 +15,7 @@ struct ContentView: View {
             contentTabs: [
                 AnyView(CourseView()),
                 AnyView(CartView()),
-                AnyView(CartView())
+                AnyView(ProfileView())
             ])
     }
 }

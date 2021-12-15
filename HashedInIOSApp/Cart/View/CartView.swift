@@ -9,6 +9,7 @@ struct CartView: View {
     @ObservedObject private var cartListVM = CartViewModel()
     
     @State private var isEditing:Bool = false
+    @State private var orderShowing:Bool = false
     
 
     var body: some View {
@@ -44,7 +45,6 @@ struct CartView: View {
             
             ScrollView(.vertical, showsIndicators: true) {
                     ForEach(self.cartList, id: \.self) { item in
-                        
                         HStack {
                             CourseCardView(item: self.cartListVM.courseConvert(id: item.id ?? UUID(), title: item.title ?? "", image: item.image ?? "", desc: item.desc ?? ""))
                                 .padding(.horizontal, 20)
@@ -56,7 +56,7 @@ struct CartView: View {
                                     self.managedObjectContext.delete(item)
                                     do {
                                         try self.managedObjectContext.save()
-                                        print("\(item.id) deleted")
+                                        print("\(String(describing: item.id)) deleted")
                                     } catch {
                                             print(error)
                                     }
@@ -85,14 +85,32 @@ struct CartView: View {
                             .cornerRadius(10)
                         } else {
                             HStack(alignment: .center, spacing: 12) {
-                                Text("Checkout")
-                                Image(systemName: "arrow.right")
+                                Button(action: {
+                                    self.orderShowing.toggle()
+                                }) {
+                                    Text("Checkout")
+                                    Image(systemName: "arrow.right")
+                                }
+                                
                             }
                             .frame(width: geometry.size.width - 40, height: 60, alignment: .center)
                             .foregroundColor(Color.white)
                             .font(Font.system(size: 17, weight: .semibold, design: .rounded))
                             .background(Color(hue: 0.359, saturation: 1.0, brightness: 0.677))
                             .cornerRadius(20)
+                            .alert(isPresented: $orderShowing){
+                                
+                               
+                                for entry in self.cartList {
+                                    self.managedObjectContext.delete(entry)
+                                }
+                                
+                                do {
+                                    try self.managedObjectContext.save()
+                                } catch {
+                                    print(error)
+                                }
+                              return  Alert(title: Text("Order Confirmed\n"), message: Text("Your Order is Confirmed\n Your order-id:\n \(UUID())"))
                         }
                     }
                 }
@@ -102,6 +120,7 @@ struct CartView: View {
             }
         }
     }
+}
 }
 
 struct CartView_Previews: PreviewProvider {
