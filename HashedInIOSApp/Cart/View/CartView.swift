@@ -7,7 +7,6 @@ struct CartView: View {
     @State private var isEditing:Bool = false
     
     var body: some View {
-        return
             VStack{
             ZStack {
                 Text("Your Cart")

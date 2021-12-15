@@ -6,9 +6,14 @@ struct HeaderBarView: View {
     @State var tabIndex: Int = 0
     @State var contentTabs:[AnyView]
     
+    @State var showCourseView: Bool = true
+    @State var showCartView: Bool = false
+    
     var body: some View {
+        
         ZStack {
             VStack {
+                self.contentTabs[self.tabIndex]
                 
                 Spacer()
                 VStack {
@@ -26,6 +31,16 @@ struct HeaderBarView: View {
                                     .onTapGesture {
                                         self.tabIndex = i
                                     }
+                                
+//                                if self.tabIndex == 0 {
+//                                    showCourseView = true
+//                                    showCartView = false
+//                                }
+//
+//                                if self.tabIndex == 1 {
+//                                    showCourseView = false
+//                                    showCartView = true
+//                                }
                             } else {
                                 self.images[i]
                                     .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.42))
@@ -53,8 +68,8 @@ struct HeaderBarView_Previews: PreviewProvider {
 
     static var previews: some View {
         HeaderBarView(images: images, tabIndex: 0, contentTabs: [
-            AnyView(Text("CourseView")),
-            AnyView(Text("CartView")),
+            AnyView(CourseView()),
+            AnyView(CartView()),
         ])
     }
 }

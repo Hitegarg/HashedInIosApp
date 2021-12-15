@@ -10,4 +10,7 @@ class CartViewModel: ObservableObject {
     
     @Published var cartList = [CourseModel]()
     
+    func addCartList(course: CourseModel){
+        cartList.append(course)
+    }
 }

@@ -2,8 +2,8 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @State private var username: String = "Hitesh"
+    @State private var password: String = "Garg"
     
     let user:UserModel = UserModel(username: "hitesh", password: "123", name: "hitesh garg", bandName: "B7", role: "Software Engineer - 1", skills: "Java, IOS", level: "Intermediate", bio: "Enthusiastic learner", imageName: "hitesh")
     
@@ -17,11 +17,11 @@ struct LoginView: View {
                     .padding(.all)
                 
                 Spacer()
-                TextField("Enter your Username", text: $username)
+                TextField(username, text: $username)
                     .padding(.all, 15)
                     .background(Color(hue: 1.0, saturation: 0.007, brightness: 0.846))
                 
-                TextField("Enter your Password", text: $password)
+                TextField(password, text: $password)
                     .padding(.all, 15)
                     .background(Color(hue: 1.0, saturation: 0.007, brightness: 0.846))
                 
