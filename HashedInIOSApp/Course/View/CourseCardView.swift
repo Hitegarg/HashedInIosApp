@@ -7,7 +7,7 @@ struct CourseCardView: View {
     var body: some View {
         VStack{
             HStack {
-                Image(systemName: "plus")
+                Image(item.imageName)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 50, height: 50, alignment: .center)

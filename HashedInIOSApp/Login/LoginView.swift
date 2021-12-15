@@ -8,12 +8,13 @@ struct LoginView: View {
     @ObservedObject private var user = ProfileViewModel()
     
     var body: some View {
+            
         NavigationView{
             VStack{
-                Image(systemName: "plus")
+                Image("hashedIn")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 100, height: 100, alignment: .center)
+                    .frame(width: 300, height: 300, alignment: .center)
                     .padding(.all)
                 
                 Spacer()
@@ -28,6 +29,8 @@ struct LoginView: View {
                 Spacer()
                 
                 NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                    
+                    
                 
                     Text("Login")
                         .padding(.horizontal, 40)
@@ -36,7 +39,21 @@ struct LoginView: View {
                         .font(Font.system(size: 17, weight: .semibold, design: .rounded))
                         .background(Color.green)
                         .cornerRadius(10)
-                    }
+                   
+                    
+                }
+//                .navigationBarItems(trailing: Button( "d", action: {
+//                    
+//                    let lg = Log(context: self.managedObjectContext)
+//                    lg.isLoggedIn = true
+//                    
+//                    do {
+//                        try self.managedObjectContext.save()
+//                        print("loggedin saved")
+//                    } catch {
+//                        print(error)
+//                    }
+//                }))
                 
                 Spacer()
             }.padding(.horizontal, 30.0)

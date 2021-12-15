@@ -14,6 +14,7 @@
 		5C9569642768B12500B63D85 /* HeaderBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9569632768B12500B63D85 /* HeaderBarView.swift */; };
 		5C9569672768B4C200B63D85 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9569662768B4C200B63D85 /* CartView.swift */; };
 		5C9569692768C1FF00B63D85 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9569682768C1FF00B63D85 /* CartViewModel.swift */; };
+		5CA3EAC9276A477500CEEB28 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3EAC8276A477500CEEB28 /* LoginModel.swift */; };
 		5CAC0535276737010030DA47 /* HashedInIOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC0534276737010030DA47 /* HashedInIOSAppApp.swift */; };
 		5CAC0537276737010030DA47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC0536276737010030DA47 /* ContentView.swift */; };
 		5CAC0539276737020030DA47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CAC0538276737020030DA47 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		5C9569632768B12500B63D85 /* HeaderBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBarView.swift; sourceTree = "<group>"; };
 		5C9569662768B4C200B63D85 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		5C9569682768C1FF00B63D85 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		5CA3EAC8276A477500CEEB28 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5CAC0531276737010030DA47 /* HashedInIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashedInIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAC0534276737010030DA47 /* HashedInIOSAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashedInIOSAppApp.swift; sourceTree = "<group>"; };
 		5CAC0536276737010030DA47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5CA3EAC7276A476600CEEB28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CA3EAC8276A477500CEEB28 /* LoginModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5CAC0528276737010030DA47 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		5CECCE1E2767A28B00AC781D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5CA3EAC7276A476600CEEB28 /* Model */,
 				5CECCE1F2767A2C000AC781D /* View */,
 			);
 			path = Login;
@@ -486,6 +497,7 @@
 				5CDCE0AF2769F3860027DAA8 /* HashedInIOSApp.xcdatamodeld in Sources */,
 				5C9569642768B12500B63D85 /* HeaderBarView.swift in Sources */,
 				5CECCE332767B9BB00AC781D /* CourseViewModel.swift in Sources */,
+				5CA3EAC9276A477500CEEB28 /* LoginModel.swift in Sources */,
 				5CDCE0B9276A29DB0027DAA8 /* HeaderView.swift in Sources */,
 				5C9569612768B06300B63D85 /* HeaderBarViewModel.swift in Sources */,
 				5CDCE0B6276A25940027DAA8 /* ProfileViewModel.swift in Sources */,

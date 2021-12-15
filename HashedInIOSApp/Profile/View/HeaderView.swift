@@ -12,7 +12,7 @@ struct Header: View {
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 100)
             
-            Image(systemName: "plus")
+            Image("profile")
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 10)

@@ -11,7 +11,7 @@ struct CourseDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Image(systemName: "plus")
+                Image(course.imageName)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 300, height: 300, alignment: .center)

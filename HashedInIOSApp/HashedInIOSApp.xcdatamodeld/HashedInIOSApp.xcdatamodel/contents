@@ -6,7 +6,11 @@
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Log" representedClassName="Log" syncable="YES" codeGenerationType="class">
+        <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <elements>
         <element name="Cart" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Log" positionX="-63" positionY="9" width="128" height="44"/>
     </elements>
 </model>
